@@ -113,9 +113,7 @@ public class CustomList {
 
     public void reverse() {
         for (int i = 0; i < this.list.length / 2; i++) {
-            int oldValue = this.list[i];
-            this.list[i] = this.list[this.list.length - i -1];
-            this.list[this.list.length - i -1] = oldValue;
+            swap(i, this.list.length - i -1);
         }
     }
 
@@ -123,11 +121,23 @@ public class CustomList {
         for (int i = 0; i < this.list.length; i++) {
             for (int j = 0; j < this.list.length - i -1; j++) {
                 if (this.list[j] > this.list[j + 1]) {
-                    int tmp = this.list[j];
-                    this.list[j] = this.list[j + 1];
-                    this.list[j + 1] = tmp;
+                    swap(j, j + 1);
                 }
             }
+        }
+    }
+
+    public void bubbleSort(boolean desc) {
+        if (desc) {
+            for (int i = 0; i < this.list.length; i++) {
+                for (int j = 0; j < this.list.length - i -1; j++) {
+                    if (this.list[j] < this.list[j + 1]) {
+                        swap(j, j + 1);
+                    }
+                }
+            }
+        } else {
+            bubbleSort();
         }
     }
 
@@ -136,15 +146,37 @@ public class CustomList {
             int max = this.list[0];
             int maxIndex = 0;
             for (int j = 0; j < this.list.length - i; j++) {
-                System.out.print(this.list[j] + " ");
                 if (this.list[j] > max) {
                     max = this.list[j];
                     maxIndex = j;
                 }
             }
-            System.out.print("max: " + max + "; maxIndex: " + maxIndex);
-            System.out.println();
+            swap(maxIndex, this.list.length - i - 1);
         }
+    }
+
+    public void selectionSort(boolean desc) {
+        if (desc) {
+            for (int i = 0; i < this.list.length; i++) {
+                int min = this.list[0];
+                int minIndex = 0;
+                for (int j = 0; j < this.list.length - i; j++) {
+                    if (this.list[j] < min) {
+                        min = this.list[j];
+                        minIndex = j;
+                    }
+                }
+                swap(minIndex, this.list.length - i - 1);
+            }
+        } else {
+            selectionSort();
+        }
+    }
+
+    private void swap(int index1, int index2) {
+        int tmp = this.list[index1];
+        this.list[index1] = this.list[index2];
+        this.list[index2] = tmp;
     }
 
     private void shiftByIndex(int index) {

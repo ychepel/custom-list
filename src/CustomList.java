@@ -163,6 +163,28 @@ public class CustomList {
         }
     }
 
+    public void invert() {
+        for (int i = 0; i < this.list.length; i++) {
+            this.list[i] *= -1;
+        }
+    }
+
+    public void positive() {
+        for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i] < 0) {
+                this.list[i] *= -1;
+            }
+        }
+    }
+
+    public void changeSign(boolean positive) {
+        for (int i = 0; i < this.list.length; i++) {
+            if (this.list[i] < 0 == positive) {
+                this.list[i] *= -1;
+            }
+        }
+    }
+
     private void swap(int index1, int index2) {
         int tmp = this.list[index1];
         this.list[index1] = this.list[index2];

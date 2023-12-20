@@ -27,5 +27,28 @@ public class Main {
 
         customList3.selectionSort(true);
         System.out.println("Selection desc sort result: " + customList3);
+
+        System.out.println();
+
+        CustomList customList4 = new CustomList(new int[]{4, 5, -13, 26, -11, 8, 0, 7, 6});
+        System.out.println("Original array4: " + customList4);
+        customList4.invert();
+        System.out.println("Inverted array4: " + customList4);
+        customList4.positive();
+        System.out.println("Positive array4: " + customList4);
+
+        System.out.println();
+
+        CustomList customList5 = new CustomList(new int[]{4, 5, -13, 26, -11, 8, 0, 7, 6});
+        System.out.println("Original array5: " + customList5);
+        customList5.changeSign(true);
+        System.out.println("Positive array5: " + customList4);
+
+        System.out.println();
+
+        CustomList customList6 = new CustomList(new int[]{4, 5, -13, 26, -11, 8, 0, 7, 6});
+        System.out.println("Original array6: " + customList6);
+        customList6.changeSign(false);
+        System.out.println("Positive array5: " + customList6);
     }
 }

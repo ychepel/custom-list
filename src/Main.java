@@ -50,5 +50,12 @@ public class Main {
         System.out.println("Original array6: " + customList6);
         customList6.changeSign(false);
         System.out.println("Positive array5: " + customList6);
+
+        System.out.println();
+
+        CustomList customList7 = new CustomList(new int[]{4, -3, 15, -6, 13, 2, 26, -5, 2});
+        System.out.println("Original array7: " + customList7);
+        customList7.insertionSort();
+        System.out.println("Insertion sort result: " + customList7);
     }
 }

@@ -185,6 +185,18 @@ public class CustomList {
         }
     }
 
+    public void insertionSort() {
+        for (int i = 1; i < this.list.length; i++) {
+            int key = this.list[i];
+            int j = i - 1;
+            while (j >= 0 && this.list[j] >= key) {
+                this.list[j + 1] = this.list[j];
+                j--;
+            }
+            this.list[j + 1] = key;
+        }
+    }
+
     private void swap(int index1, int index2) {
         int tmp = this.list[index1];
         this.list[index1] = this.list[index2];
